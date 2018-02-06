@@ -5,6 +5,7 @@
   <p><%= item.title %></p>
   <p><%= item.subtitle %></p>
   <p><%= item.body %></p>
-  <%= image_tag item.thumb_image %>
+  <%#=  defensive coding, I'd rather use ' if item.thumb_image' %>
+  <%= image_tag item.thumb_image unless item.thumb_image.nil? %>
 <% end %>
 
