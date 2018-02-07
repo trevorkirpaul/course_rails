@@ -9,10 +9,20 @@
 
 # from course, seeding - Trevor l45
 
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+  )
+end
+
+puts "3 topics created"
+
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique vehicula purus, sed efficitur quam viverra sit amet. Curabitur quis ipsum vel dui consectetur efficitur. Duis vitae turpis mattis, commodo urna a, mollis mi. Nullam vel pellentesque eros, sit amet scelerisque risus. Ut vestibulum sed diam id finibus. Suspendisse dictum viverra nisi nec posuere. Phasellus at metus massa. In nec massa urna. Integer finibus dolor vitae tempus pellentesque. "
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique vehicula purus, sed efficitur quam viverra sit amet. Curabitur quis ipsum vel dui consectetur efficitur. Duis vitae turpis mattis, commodo urna a, mollis mi. Nullam vel pellentesque eros, sit amet scelerisque risus. Ut vestibulum sed diam id finibus. Suspendisse dictum viverra nisi nec posuere. Phasellus at metus massa. In nec massa urna. Integer finibus dolor vitae tempus pellentesque. ",
+    topic_id: Topic.last.id
   )
 end
 
@@ -27,10 +37,20 @@ end
 
 puts "5 skills created"
 
-9.times do |item|
+8.times do |item|
   Portfolio.create!(
     title: "Portfolio Title: #{item}",
-    subtitle: "My Great Service",
+    subtitle: "Ruby on Rails",
+    body: "Nullam vel pellentesque eros, sit amet scelerisque risus. Ut vestibulum sed diam id finibus. Suspendisse dictum viverra nisi nec posuere. Phasellus at metus massa.",
+    main_image: "http://via.placeholder.com/600x400",
+    thumb_image: "http://via.placeholder.com/350x200"
+  )
+end
+
+1.times do |item|
+  Portfolio.create!(
+    title: "Portfolio Title: Angular #{item}",
+    subtitle: "Angular",
     body: "Nullam vel pellentesque eros, sit amet scelerisque risus. Ut vestibulum sed diam id finibus. Suspendisse dictum viverra nisi nec posuere. Phasellus at metus massa.",
     main_image: "http://via.placeholder.com/600x400",
     thumb_image: "http://via.placeholder.com/350x200"
